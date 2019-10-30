@@ -1,0 +1,114 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+
+  <table class="table table-sm 
+                table-striped table-dan ">
+    <thead>
+      <tr>
+        <th scope = "col" style="text-align:left">
+          <%=sortable "franchise", "Franchise" %>
+        </th>
+        <th scope = "col" style="text-align:left">
+          <%=sortable "lastname" , "Name" %>
+        </th>
+        <th scope = "col" style = "text-align:center">Status</th>
+        
+        <% if destination == "franchise_edit"%>
+          <th scope = "col" style="text-align:center">Region</th>
+          <th scope = "col"></th>
+          <th scope = "col"></th>
+        <%else%>
+          <th scope = "col"></th>
+        <%end%>
+      </tr>
+    </thead>
+    <% @franchises.each do |franchise| %>
+      
+      <tr>
+        <th scope="row" align="left" class = "text-nowrap">
+          <%=franchise.franchise_number %> 
+        </td>
+        
+        <td align="left" class = "text-nowrap">
+          <%=franchise.full_name%> 
+        </td>
+        
+        <td align="center" class = "text-nowrap">
+          <%=franchise_status(franchise)%>
+
+        </td>
+        <%if destination == "franchise_edit" %>    
+          <td align="center" class = "text-nowrap">
+            <%=franchise.region_desc%> 
+          </td>
+        
+        <%end%>
+        
+        <%case destination %>
+          <%when 'franchise_edit'%>
+            <td class = "text-nowrap">
+              <%=link_with_icon(edit_admins_franchise_path(id:franchise.id),
+                "edit",
+                "Edit this franchise") %> 
+            </td>
+
+            <td class = "text-nowrap">
+              <%=link_with_icon(
+                admins_franchise_path(id:franchise),
+                "show",
+                "View this Franchise")%>
+            </td>
+          
+          <%when "add_royalty"%>
+          <td class = "text-nowrap">
+            <%= link_to "Continue", new_remittance_path(franchise_id: franchise.id), class: "btn btn-primary" %>
+            </td>
+
+            <%when "add_receivable"%>
+            <td class = "text-nowrap">
+            <%= link_to "Continue", new_receivable_path(franchise_id: franchise.id), class: "btn btn-primary" %>
+            </td>
+
+            <%when "add_invoice"%>
+            <td class="text-nowrap">
+              <%= link_to "Continue", new_invoice_path(franchise_id: franchise.id), class: "btn btn-primary"%>
+            </td>
+
+            <%when "support"%>
+            <td class = "text-nowrap">
+            <%= link_to "Continue", supports_path(franchise_id: franchise.id), class: "btn btn-primary" %>
+            </td>
+
+          <%when "add_payment"%>
+          <td class = "text-nowrap">
+            <%= link_to "Continue", new_check_payment_path(franchise_id: franchise.id), class: "btn btn-primary" %>
+            </td>
+
+          <%when "add_credit"%>
+          <td class = "text-nowrap">
+            <%= link_to "Continue", new_franchise_credit_path(franchise_id: franchise.id), class: "btn btn-primary" %>
+            </td>
+
+          <%when "add_accountant"%>
+            <td class = "text-nowrap">
+            <%= link_to "Continue", new_accountant_path(franchise_id: franchise.id), class: "btn btn-primary" %>
+            </td>            
+        <%end%>
+
+        
+      </tr>
+     
+    <% end %>
+    
+  </table>
+
+
+
+<div class = "row justify-content-center">
+  <div class = "flickr_pagination">
+  <%= will_paginate @franchises %>
+</div>
+</div>
+
+

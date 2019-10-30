@@ -65,23 +65,23 @@ after_save :log_rebate_changed, if: :advanced_rebate_changed?
 #after_save :reset_name_variable, if: :name_has_changed?
 
 #Model Validation
-  validates :area,       presence: true , message: "Area cannot be blank"  
-  validates :mast,       presence: true , message:  "Mast cannot be blank"  
-  validates :region,     presence: true , message:  "Region cannot be blank"  
-  validates :franchise,  presence: true , message:  "Franchise number cannot be blank"  
-  validates :office,     presence: true , message:  "Office number cannot be blank"  
-  validates :lastname,   presence: true , message:  "Last Name cannot be blank"  
-  validates :firstname,  presence: true , message:  "First Name cannot be blank"  
-  validates :email,      presence: true , message:  "Email cannot be blank"  
-  validates :phone,      presence: true , message:  "Phone cannot be blank"  
-  validates :start_date, presence: true , message:  "Start Date cannot be blank"  
-  validates :address,    presence: true , message:  "Address cannot be blank"  
-  validates :city,       presence: true , message:  "City cannot be blank"  
-  validates :state,      presence: true , message:  "State cannot be blank"  
-  validates :zip_code,   presence: true , message:  "Zip Code cannot be blank"  
+  validates :area,       presence: {message: "Area cannot be blank"}
+  validates :mast,       presence: {message:  "Mast cannot be blank"}  
+  validates :region,     presence: {message:  "Region cannot be blank"}
+  validates :franchise_number,  presence: {message:  "Franchise number cannot be blank"}  
+  validates :office,     presence: {essage:  "Office number cannot be blank"}  
+  validates :lastname,   presence: {message:  "Last Name cannot be blank"}  
+  validates :firstname,  presence: {message:  "First Name cannot be blank"}  
+  validates :email,      presence: {message:  "Email cannot be blank"}  
+  validates :phone,      presence: {message:  "Phone cannot be blank"}  
+  validates :start_date, presence: {message:  "Start Date cannot be blank"}  
+  validates :address,    presence: {message:  "Address cannot be blank"}  
+  validates :city,       presence: {message:  "City cannot be blank"}  
+  validates :state,      presence: {message:  "State cannot be blank"}  
+  validates :zip_code,   presence: {message:  "Zip Code cannot be blank"}  
   validates :prior_year_rebate, numericality: {greater_than_or_equal_to: 0, message: 'Credit cannot exceed available balance'}
   validates :advanced_rebate, numericality: {greater_than_or_equal_to: 0 ,  message: 'Negative advanced rebate not allowed'}
-  validates :franchise, :uniqueness => {:scope => [:region, :office], message: 'This franchise entry already exists'}
+  validates :franchise_number, :uniqueness => {:scope => [:region, :office], message: 'This franchise entry already exists'}
   validates :email , format: {with: /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/, message: 'Invalid email format'}
 
   #================================================================= 
@@ -93,20 +93,47 @@ after_save :log_rebate_changed, if: :advanced_rebate_changed?
   end
   #franchise number lastname and firstname
   def number_and_name
-    [franchise , lastname, firstname].join(' ')
+    [franchise_number , lastname, firstname].join(' ')
   end
   #lastname firstname and franchise number
   def dropdown_list
-    [lastname  ,firstname, "(#{franchise})"].join(' ')
+    [lastname  ,firstname, "(#{franchise_number})"].join(' ')
   end
   #franchise number and lastname
   def full_denomination
-    [franchise, lastname].join(' ')
+    [franchise_number, lastname].join(' ')
   end
 
   #flag to see if name changed
   def name_has_changed?
     lastname_changed? || firstname_changed?
+  end
+  
+  def region_desc
+    case self.region 
+    when 1
+      "Southeast"  
+    when 2
+      "Mid-Atlantic"
+    when 3
+      "Northeast Corridor"
+    when 4
+      "Mid-USA"
+    when 5
+      "West"
+    end
+  end
+  #================================================================= 
+  #Class Methods  
+  #=================================================================
+  #Method that search through the franchises based on search criterias
+  #This is called from the find frachise screen
+  def self.search(search)
+    if search
+      where('lower(lastname) LIKE ? OR lower(firstname) LIKE ?', "%#{search.downcase}%","%#{search.downcase}%")
+    else
+      where(nil)
+    end
   end
 
   private

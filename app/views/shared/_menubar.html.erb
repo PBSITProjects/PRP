@@ -1,0 +1,16 @@
+<div class="collapse navbar-collapse" id="main-nav-collapse">
+  <!-- If User is Logged In -->
+  <% if signed_in? %> 
+    <!-- IF USER IS AN ADMIN -->
+    <% if current_admin %>
+      <%=render "admins/shared/user_admin" %>
+    <%else%>
+    <!-- IF USER IS A FRANCHISE -->
+      <%=render "shared/user_franchise" %>
+    <%end%>
+  <%end%>
+  <!--SHOW THE SIGN OUT OR LOGIN LINKAT THE END -->
+  <%= render "shared/login_links" %>  
+  
+</div>
+        

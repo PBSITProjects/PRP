@@ -1,2 +1,71 @@
-<h1>Public#main</h1>
-<p>Find me in app/views/public/main.html.erb</p>
+<!-- PADGETT LOGO IMAGE AND APP TITLE -->
+<div class = "row">
+  <div class = "col-12">
+    <%=image_pack_tag("Padgett_CC_S.png")%>
+      <h1 style="display:inline" 
+        class="padgett-text display-3 align-bottom">
+      Report + Pay
+  </div>
+</div>
+<br>
+<div class = "row">
+  <!-- LEFT SIDE OF MAIN PAGE WITH PICTURE -->
+  <div class = "container-fluid col-xs-12 col-sm-12 col-md-8 col-lg-8" style="height:calc(100vh - 35vh);padding-right:0px;padding-left:15px">
+      <%=image_pack_tag("report.jpg",
+      style: 'width:100%;height:100%;')%>
+  </div>
+  <!-- RIGHT SIDE OF MAIN PAGE WITH LOGIN FORM -->
+  <div class = "container-fluid col-xs-12 
+                col-sm-12 col-md-4 col-lg-4">
+  	<div class = 
+    "card">
+  	  <div class = "card-header login_header">
+  	    <h5>Welcome, Please Sign In</h5>	
+  	  </div>
+  	  <div class = "card-body">
+  	    <%=form_for(:user, :url=>new_session_path(:user)) do |f|%>
+          <!-- EMAIL -->
+  	  	  <div class = "form-group">
+  	  	    <%=f.email_field :email, 
+  	  	       class: "form-control", placeholder: "Email"%>
+  	  	  </div>
+          <!-- PASSWORD -->
+  	  	  <div class = "form-group">
+  	  	    <%=f.password_field :password, 
+  	  	       class: "form-control", placeholder: "Password"%>
+          </div>
+          <!-- REMEMBER ME CHECKBOX -->
+          <div class = "form-check">
+            <%=f.check_box :remember_me, 
+        	   class: "form-check-input"%>
+            <%=f.label :remember_me, "Remember me",
+               class: "form-check-label"%>
+          </div>
+          <br>
+          <!-- LOG IN BUTTON -->
+          <%= f.submit 'Log In',
+              class: "btn btn-block btn-padgett"%>
+          <div align="center">   
+          <br> 
+          <!-- FORGOT PASSWORD LINK -->
+          <%=link_to "Forgot Password",
+          new_user_password_path(:user)%>
+        </div>
+        <%end%>
+      </div>
+      <br>
+      <!-- SIGNUP OPTION -->
+      <div class = "card-header signup-header">
+        <h5 class = "padgett-text">
+          Don't have an account yet?
+        </h5> 
+      </div>
+      <!-- SIGNUP BUTTON -->
+      <div class = "card-body">
+        <%=link_to "Sign Up", signup_path,
+           id: 'registration_link',
+           class: 'btn btn-block btn-padgett'%>
+      </div>
+    </div>
+  </div>
+</div>

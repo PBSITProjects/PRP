@@ -1,0 +1,404 @@
+<ul class="navbar-nav mr-auto">
+  <!-- FRANCHISE MENU DROPDOWN-->    
+  <li class="nav-item dropdown">
+    <a href ="#" class="nav-link dropdown-toggle" 
+       data-toggle="dropdown" 
+       role="button" aria-haspopup = "true" 
+       aria-expanded = "false">
+      Franchises
+    </a>
+    <ul class = "dropdown-menu multi-level" 
+      aria-labelledby="navbarDropdownFranchiseLink">
+      <!-- FRANCHISES-->  
+      <li>
+        <%= link_to "Franchises" , admins_franchises_path, class: "dropdown-item" %>
+      </li>
+      <!-- ACCOUNTANTS-->  
+      <li>
+        <%= link_to "Accountants" , "#", class: "dropdown-item" %>
+      </li>
+      <!-- INSURANCE-->  
+      <li>
+        <%= link_to "Insurance" , "#", class: "dropdown-item" %>
+      </li>
+      <div class="dropdown-divider"></div>
+      <!-- SUPPORT-->  
+      <li class = "dropdown-submenu">
+        <a class = "dropdown-item dropdown-toggle" 
+          tabindex="-1" href="#">
+          Support
+        </a>
+        <ul class = "dropdown-menu">
+          <!-- SUPPORT HISTORY-->  
+          <li>
+            <%= link_to "Support History" , "#",
+              class: "dropdown-item" %>
+            </li>
+          <li>
+            <!-- SEARCH SUPPORT HISTORY-->  
+            <%= link_to "Search Support" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+        </ul>
+      </li>
+      <div class="dropdown-divider"></div>
+      <!-- FRANCHISE REPORTS-->  
+      <li class = "dropdown-submenu">
+        <a class = "dropdown-item dropdown-toggle" 
+        tabindex="-1" href="#">
+          Reports
+        </a>
+        <ul class = "dropdown-menu">
+          <!-- FRANCHISE LIST-->  
+          <li>
+            <%= link_to "Franchise List" , "#",
+              class: "dropdown-item" %>
+          </li>
+          <li>
+            <%= link_to "Expiring Franchises" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- FRANCHISE REBATES-->  
+          <li>
+            <%= link_to "Franchise with Advanced Rebates" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- FRANCHISE PRIOR REBATES-->   
+          <li>
+            <%= link_to "Franchise with Prior Rebate" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <div class="dropdown-divider"></div>
+          <!-- PAYMENT METHODS-->   
+          <li>
+            <%= link_to "Payment Methods" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- FRANCHISE MISSING PAYMENT METHODS-->   
+          <li>
+            <%= link_to "Franchises Missing Payment Method" ,
+            "#" ,class: "dropdown-item"%>
+          </li>
+          <div class="dropdown-divider"></div>
+          <!-- EXPIRING INSURANCE-->   
+          <li>
+            <%= link_to "Expiring Insurance" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- FRANCHISE MISSING INSURANCE-->   
+          <li>
+            <%= link_to "Franchises Missing Insurance" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+        </ul>
+      </li>
+         
+    </ul>
+  </li>
+  <!-- ROYALTIES MENU DROPDOWN-->   
+  <li class="nav-item dropdown">
+    <a href ="#" class="nav-link dropdown-toggle" 
+       data-toggle="dropdown" 
+       role="button" aria-haspopup = "true" 
+       aria-expanded = "false">
+      Royalties
+    </a>
+    <ul class = "dropdown-menu multi-level" 
+      aria-labelledby="navbarDropdownRoyaltyLink">
+      <!-- ENTER ROYALTIES-->  
+      <li>
+        <%= link_to "Enter Royalties" , "#", class: "dropdown-item" %>
+      </li>
+      <!-- REVIEW ROYALTIES-->  
+      <li>
+        <%= link_to "Review Royalties" , "#", class: "dropdown-item" %>
+      </li>
+      <div class="dropdown-divider"></div>
+      <!-- ROYALTIES REPORTS-->  
+      <li class = "dropdown-submenu">
+        <a class = "dropdown-item dropdown-toggle" 
+        tabindex="-1" href="#">
+          Reports
+        </a>
+        <ul class = "dropdown-menu">
+          <!-- FRANCHISE HISTORY-->  
+          <li>
+            <%= link_to "Franchise History" , "#",
+              class: "dropdown-item" %>
+          </li>
+          <!-- FRANCHISE HISTORY MULTIPLE-->  
+          <li>
+            <%= link_to "Franchise History (Multiple Years)" ,
+            "#" , class: "dropdown-item"%>
+          </li>
+          <div class="dropdown-divider"></div>
+          <!-- COLLECTIONS BY RECEIPT DATE-->  
+          <li>
+            <%= link_to "Collections by Receipt Date" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- COLLECTIONS BY RECEIPT DATE (Comparison)-->   
+          <li>
+            <%= link_to "Collections by Receipt Date (Comparison)" ,
+             "#" , class: "dropdown-item"%>
+          </li>
+          <!-- COLLECTIONS UNDER THRESHOLD-->  
+          <li>
+            <%= link_to "Collections Under a Threshold" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- COLLECTIONS SUMMARY BY RECEIPT MONTH-->  
+          <li>
+            <%= link_to "Collections Summary by Receipt Month",
+             "#" , class: "dropdown-item"%>
+          </li>
+          <!-- COLLECTIONS SUMMARY BY YEAR-->  
+          <li>
+            <%= link_to "Collections Summary by Year" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <div class="dropdown-divider"></div>
+          <!-- ROYALTY SUMMARY BY MONTH-->  
+          <li>
+            <%= link_to "Royalty Summary by Receipt Month" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- ROYALTY SUMMARY BY YEAR-->  
+          <li>
+            <%= link_to "Royalty Summary by Year" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <div class="dropdown-divider"></div>
+          <!-- MONTHLY RANKNIGS-->  
+          <li>
+            <%= link_to "Monthly Rankings" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- PERFORMANCE REPORT-->  
+          <li>
+            <%= link_to "Performance Report (Collections & Royalties)" , "#" , class: "dropdown-item"%>
+          </li>
+          <!-- SALES REPORT-->  
+          <li>
+            <%= link_to "Sales Report" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- GROWTH REPORT-->  
+          <li>
+            <%= link_to "Growth Report" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- YEARLY RANKINGS AVG-->  
+          <li>
+            <%= link_to "Yearly Rankings (Averages)" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- YEARLY RANKINGS TOTALS-->  
+          <li>
+            <%= link_to "Yearly Rankings (Totals)" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <div class="dropdown-divider"></div>
+          <!-- LATE REPORTS SUBMITTED-->  
+          <li>
+            <%= link_to "Late Report Submissions" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+        </ul>
+      </li>
+         
+    </ul>
+  </li>
+  <!-- CHARGES AND RECEIPTS MENU DROPDOWN-->   
+  <li class="nav-item dropdown">
+    <a href ="#" class="nav-link dropdown-toggle" 
+       data-toggle="dropdown" 
+       role="button" aria-haspopup = "true" 
+       aria-expanded = "false">
+      Charges / Receipts
+    </a>
+    <ul class = "dropdown-menu multi-level" 
+      aria-labelledby="navbarDropdownReceiptsLink">
+      <!-- CHARGES-->  
+      <li>
+        <%= link_to "Charges" , "#", class: "dropdown-item" %>
+      </li>
+      <!-- CREDITS-->  
+      <li>
+        <%= link_to "Credits" , "#", class: "dropdown-item" %>
+      </li>
+      <!-- CHECKS-->  
+      <li>
+        <%= link_to "Checks" , "#", class: "dropdown-item" %>
+      </li>
+      <!-- FRANCHISE CHARGES-->  
+      <li>
+        <%= link_to "Franchise Charges" , "#", class: "dropdown-item" %>
+      </li>
+      <div class="dropdown-divider"></div>
+      <!-- CHARGES AND RECEIPTS REPORTS-->  
+      <li class = "dropdown-submenu">
+        <a class = "dropdown-item dropdown-toggle" 
+        tabindex="-1" href="#">
+          Reports
+        </a>
+        <ul class = "dropdown-menu">
+          <!-- AMOUNTS DUE-->  
+          <li>
+            <%= link_to "Amounts Due" , "#",
+              class: "dropdown-item" %>
+          </li>
+          <!-- DELINQUENT REPORT-->  
+          <li>
+            <%= link_to "Delinquent Report" ,
+            "#" , class: "dropdown-item"%>
+          </li>
+          <!-- STATEMENT-->  
+          <li>
+            <%= link_to "Franchise Statement" ,
+            "#" , class: "dropdown-item"%>
+          </li>
+          <div class="dropdown-divider"></div>
+          <!-- TRANSACTION SUMMARY-->  
+          <li>
+            <%= link_to "Transaction Summart" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <!-- TRANSACTION DETAIL-->   
+          <li>
+            <%= link_to "Transaction DEtail" ,
+             "#" , class: "dropdown-item"%>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <!-- PAYMENTS MENU DROPDOWN-->   
+  <li class="nav-item dropdown">
+    <a href ="#" class="nav-link dropdown-toggle" 
+       data-toggle="dropdown" 
+       role="button" aria-haspopup = "true" 
+       aria-expanded = "false">
+      Payments
+    </a>
+    <ul class = "dropdown-menu multi-level" 
+      aria-labelledby="navbarDropdownPaymentsLink">
+      <!-- PENDING-->  
+      <li>
+        <%= link_to "Pending" , "#", class: "dropdown-item" %>
+      </li>
+      <!-- APPROVED-->  
+      <li>
+        <%= link_to "Approved" , "#", class: "dropdown-item" %>
+      </li>
+      <!-- DECLINED-->  
+      <li>
+        <%= link_to "Declined / Errors" , "#", class: "dropdown-item" %>
+      </li>
+      <!-- ALL PAYMENTS-->  
+      <li>
+        <%= link_to "All Payments" , "#", class: "dropdown-item" %>
+      </li>
+      <div class="dropdown-divider"></div>
+      <!-- ALL PAYMENTS-->  
+      <li>
+        <%= link_to "Manage Check Payments" , "#",
+          class: "dropdown-item" %>
+      </li>
+      <div class="dropdown-divider"></div>
+      <!-- CHARGES AND RECEIPTS REPORTS-->  
+      <li class = "dropdown-submenu">
+        <a class = "dropdown-item dropdown-toggle" 
+        tabindex="-1" href="#">
+          Reports
+        </a>
+        <ul class = "dropdown-menu">
+          <!-- PAYMENTS BY TYPE-->  
+          <li>
+            <%= link_to "Payments By Type" , "#",
+              class: "dropdown-item" %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <!-- TOOLS-->   
+  <li class="nav-item dropdown">
+    <a href ="#" class="nav-link dropdown-toggle" 
+       data-toggle="dropdown" 
+       role="button" aria-haspopup = "true" 
+       aria-expanded = "false">
+      Tools
+    </a>
+    <ul class = "dropdown-menu multi-level" 
+      aria-labelledby="navbarDropdownToolsLink">
+      <!-- MANAGE CHARGES CODES-->  
+      <li>
+        <%= link_to "Manage Charge Codes" , "#",
+          class: "dropdown-item" %>
+      </li>
+      <!-- MANAGE CREDIT CODES-->  
+      <li>
+        <%= link_to "Manage Credit Codes" , "#",
+          class: "dropdown-item" %>
+      </li>
+      <!-- MANAGE FRANCHISE GROUPSCREDIT CODES-->  
+      <li>
+        <%= link_to "Manage Franchise Groups" , "#",
+          class: "dropdown-item" %>
+      </li>
+      <div class="dropdown-divider"></div>
+      <!-- BACKGROUND JOBS-->  
+      <li>
+        <%= link_to "Background Jobs" , "/sidekiq",
+          class: "dropdown-item" %>
+      </li>
+      <!-- SERVER LOGS-->  
+      <li>
+        <%= link_to "Server Logs" , "/logs",
+          class: "dropdown-item" %>
+      </li>
+      <li>
+        <%= link_to "Payment Responses" , "#",
+          class: "dropdown-item" %>
+      </li>
+      <div class="dropdown-divider"></div>
+       <!-- LOGIN AS ANOTHER FRANCHISE-->  
+      <li>
+        <%= link_to "Log In As ..." , "#",
+          class: "dropdown-item" %>
+      </li>
+      <div class="dropdown-divider"></div>
+      <!-- TOOLS REPORTS-->  
+      <li class = "dropdown-submenu">
+        <a class = "dropdown-item dropdown-toggle" 
+        tabindex="-1" href="#">
+          Reports
+        </a>
+        <ul class = "dropdown-menu">
+          <!-- EVENT LOG-->  
+          <li>
+            <%= link_to "Event Log" , "#",
+              class: "dropdown-item" %>
+          </li>
+          <!-- REGISTERED USERS-->  
+          <li>
+            <%= link_to "Registered Users" , "#",
+              class: "dropdown-item" %>
+          </li>
+          <!-- MISSING FRANCHISES-->  
+          <li>
+            <%= link_to "Franchises Not Registered" , "#",
+              class: "dropdown-item" %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <!-- USER PROFILE -->
+  <li class = "nav-item">
+    <%=link_to "User Profile", "#", class: "nav-link"%>
+  </li>
+</ul>

@@ -1,8 +1,8 @@
 class Admin < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :trackable
+  devise :database_authenticatable, 
+         :recoverable, :rememberable, :validatable, :trackable, :timeoutable
 
   enum role: [:full_control, :read_only]       
 
@@ -13,6 +13,10 @@ class Admin < ApplicationRecord
 
   def set_default_role
   	self.role ||= :full_control
+  end
+
+  def reset_pass
+    self.send_reset_password_instructions
   end
 
   private

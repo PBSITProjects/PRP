@@ -1,0 +1,41 @@
+<!-- FRANCHISE USER -->
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item dropdown">
+    <a href ="#" class="dropdown-toggle nav-link" 
+       data-toggle="dropdown" role="button" 
+       aria-haspopup = "true" aria-expanded = "false" 
+       id="navbarDropdownAccountLink">
+       Account
+    </a>
+    
+    <ul class = "dropdown-menu multi-level" 
+    aria-labelledby="navbarDropdownAccountLink">
+      <!-- USER ACCOUNT -->
+      <li>
+        <%= link_to "User Profile", "#", class: "dropdown-item" %>
+      </li>
+      <li class="dropdown-divider"></li>
+      <li class = "dropdown-submenu">
+        <a class = "dropdown-item dropdown-toggle" 
+        tabindex="-1" href="#">Franchise Setup</a>
+        <ul class = "dropdown-menu">
+          <li>
+          <%= link_to "Franchise Profile" , "#",
+              class: "dropdown-item" %>
+            </li>
+          <li>
+          <%= link_to "Accountants" , "#" ,
+              class: "dropdown-item"%>
+          </li>
+          <li>
+          <%= link_to "Insurance" , "#" ,
+              class: "dropdown-item"%>
+            </li>
+        </ul>
+      </li>
+    </ul>
+            
+
+  </li>
+  
+</ul>

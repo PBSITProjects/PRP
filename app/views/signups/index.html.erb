@@ -1,0 +1,24 @@
+<!-- This is the New view for the Signup Page-->
+<!-- We only ask for their email and then pass the result to the proper handler-->
+<div class = "row">
+  <div class = "col-6 offset-3">
+    <!-- TITLE -->
+    <div class = "card">
+      <div class="card-header login_header">
+        <h2>Sign Up</h2>
+      </div>
+      <!-- EMAIL FIELD -->
+      <div class = "card-body">
+        <p>Please enter your email below</p>
+        <%= form_tag "/signup" do %>
+          <div class = "form-group">
+            <%= email_field_tag "email","",
+            class: 'form-control' %>
+          </div>
+          <!-- SIGNUP BUTTON -->
+          <%= submit_tag "Sign Me Up", class:'btn btn-padgett'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
