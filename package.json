@@ -9,7 +9,9 @@
     "@rails/webpacker": "^4.0.7",
     "bootstrap": "4.3.1",
     "jquery": "^3.4.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-mask-plugin": "^1.14.16",
+    "jquery-ui-bundle": "^1.12.1-migrate",
+    "jquery-ui-dist": "^1.12.1",
     "popper.js": "^1.15.0",
     "turbolinks": "^5.2.0"
   },

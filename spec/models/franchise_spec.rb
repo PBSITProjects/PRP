@@ -75,6 +75,14 @@ RSpec.describe Franchise, type: :model do
       expect(build(:franchise, zip_code: nil )).not_to be_valid  
     end 
 
+    it "is invalid if firm_id is not 6 digits" do 
+      expect(build(:franchise, firm_id: "1234")).not_to be_valid
+    end
+
+    it "is valid without a firm_id" do 
+      expect(build(:franchise, firm_id: "")).to be_valid
+    end
+
   	#Test the several validate_presence and numericality 	
   	it "is invalid if prior year rebate is less than zero" do
   	  expect(build(:franchise, prior_year_rebate: -1)).not_to be_valid
@@ -87,6 +95,7 @@ RSpec.describe Franchise, type: :model do
     it "does not accept duplicate franchise" do 
       expect(build(:franchise, franchise_number: glass.franchise_number)).not_to be_valid
     end
+
   end
 
   describe "Test the instance methods" do 

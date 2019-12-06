@@ -398,7 +398,29 @@
     </ul>
   </li>
   <!-- USER PROFILE -->
-  <li class = "nav-item">
-    <%=link_to "User Profile", "#", class: "nav-link"%>
+  <li class="nav-item dropdown">
+    <a href ="#" class="nav-link dropdown-toggle" 
+       data-toggle="dropdown" 
+       role="button" aria-haspopup = "true" 
+       aria-expanded = "false">
+      Users
+    </a>
+    <ul class = "dropdown-menu multi-level" 
+      aria-labelledby="navbarDropdownUsersLink">
+      <!-- Manage Home Office Users-->  
+      <li>
+        <%= link_to "Manage Corporate Users" , "#",
+          class: "dropdown-item" %>
+      </li>
+      <!-- Your Profile-->  
+      <li>
+        <%= link_to "Your Profile" , "#",
+          class: "dropdown-item" %>
+      </li>
+    </ul>
   </li>
+
+
+
+  
 </ul>

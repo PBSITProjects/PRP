@@ -1,6 +1,8 @@
+
+<!-- If we're looking to edit, we show the create button -->
 <%if @destination == "franchise_edit"%>
   <div class = "row col-12">
-    <%=link_to new_admins_franchise_path do%>
+    <%=link_to new_admins_franchise_path, data: {turbolinks: false} do%>
       <button class = 'btn btn-padgett'>
         Create Franchise
       </button>
@@ -8,24 +10,24 @@
   </div>
 <%end%>
 
-
+<!-- Form that filters through the franchise list -->
   <%= form_tag admins_franchises_path, :method => 'get',
       :id => "franchise_search", class: 'pt-2 pb-2'  do %>
       <div class = "form-group row">
-        <%=label_tag "search" , "Search by Last / First Name",class:'col-form-label col-md-4 col-sm-4 col-lg-3' %>
-        <div class = "col-sm-4 col-md-4 col-lg-3">
+        
+        <div class = "col-sm-6 col-md-6 col-lg-4">
           <%= text_field_tag :search, params[:search],
          class:'form-control input-sm' %>
         </div>
 
-       <div class = "col-sm-3 col-md-3 col-lg-2">
+       <div class = "col-sm-3 col-md-3 col-lg-2 no-padding">
          <%= submit_tag "Search", :lastname => nil,
          class:'btn btn-padgett'%>
        </div>
       </div>   
   <% end %>
 
-
+<!-- Franchise list -->
 <div class = "row">
   <div id="franchises" class="col" >
     <%=render partial: 'franchise_list',

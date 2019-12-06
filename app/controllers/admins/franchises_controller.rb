@@ -1,7 +1,7 @@
 class Admins::FranchisesController < ApplicationController
   helper_method :sort_column, :sort_direction
   before_action :set_franchise, only: [:show, :edit, :update]
-
+  
   def index
     # We use the franchise list in other modules to select a franchise before operations
     if params[:destination] 
@@ -18,7 +18,44 @@ class Admins::FranchisesController < ApplicationController
     @franchises = Franchise.search(params[:search])
                            .order(sort_column + " " + sort_direction)
                            .paginate(per_page: 10, page: params[:page])
+    authorize! :read, Franchise
   end 
+
+  def new
+    @franchise = Franchise.new(area: 1, mast: 0)
+  end
+
+  def create
+    @franchise = Franchise.new(franchise_params)
+    @franchise.set_dates(franchise_params[:start_date], franchise_params[:renew_date], franchise_params[:term_date])
+
+    if @franchise.save
+      flash[:success] = 'Franchise Created Successfully'
+      redirect_to admins_franchises_path 
+    else
+      render action: :new
+    end
+  end
+
+  def edit 
+    authorize! :edit, @franchise
+  end
+
+  def update
+    @franchise.assign_attributes(franchise_params)
+    set_dates(franchise_params)
+    if @franchise.save
+      flash[:success] = "Franchise profile modified successfully"
+      redirect_to admins_franchises_path
+    else
+      render 'edit'
+    end
+  end
+
+  def show
+    authorize! :read, @franchise
+  end
+
 
   private
 

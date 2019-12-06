@@ -39,6 +39,8 @@ gem 'gon'
 
 gem 'turnout'
 
+gem 'cancan'
+
 gem 'savon' , '2.12.0'
 
 gem 'sidekiq' 

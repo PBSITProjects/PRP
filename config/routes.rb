@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   devise_for :users, path: 'users', controllers: 
   {sessions: 'users/sessions'}
 
+  
+
   get '/404', :to => "errors#not_found"
   get '/422', :to => "errors#unacceptable"
   #get '/500', :to => "errors#server_error"
@@ -18,23 +20,27 @@ Rails.application.routes.draw do
 
   authenticated :user do 
   	root to: 'public#userpage', as: "authenticated_user" 
+  end
+  
+  authenticate :user do  
     resources :users
     resources :franchises, only: [:edit]
-
   end
 
   authenticated :admin do 
   	root to: 'public#adminpage', as: "authenticated_admin" 
+  end
+
+  authenticate :admin do 
     mount Logster::Web, at: "/logs"
     mount Sidekiq::Web => '/sidekiq'
     namespace :admins do 
       resources :admins
       resources :franchises
     end
-
   end
   
-  root to: 'public#main'
-
+root to: 'public#main'
+  
   
 end

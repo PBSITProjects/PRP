@@ -1,0 +1,14 @@
+
+<%= render :partial => "shared/error_handling",
+    :locals => {:the_object => @franchise,
+    	        :objectname => 'Franchise profile'} %>
+
+
+<div class = "row">
+  <div class = "col-12">
+    <%= render :partial =>'form',
+    :locals => {:franchise => @franchise,
+                :action => 'edit'} %>
+  </div>
+</div>
+

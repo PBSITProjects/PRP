@@ -7,23 +7,31 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery")
+require("jquery-ui")
 
-import "jquery"
-import "jquery-ui"
+
 import "bootstrap"
 import "../stylesheets/application"
 import "@fortawesome/fontawesome-free/js/all";
 import $ from 'jquery';
-
+import "jquery-mask-plugin"
+ 
 global.$ = jQuery;
+
+require("custom/franchises")
 
 require.context('../images',true, /\.(?:png|jpg|gif|ico|svg)$/)
 
-document.addEventListener("turbolinks:load", ()=> {
-	$('[data-toggle="tooltip"]').tooltip()
-	$('[data-toggle="popover"]').popover()
 
+$.jMaskGlobals.watchDataMask = true;
+
+document.addEventListener("turbolinks:load", () => {
+  var data = $('body').data();
+  $(document).trigger(data.controller+'#'+data.action+':loaded');
+	
 	$( ".dropdown-submenu" ).click(function(event) {
+    
     // stop bootstrap.js to hide the parents
     event.stopPropagation();
     // hide the open children
@@ -34,13 +42,30 @@ document.addEventListener("turbolinks:load", ()=> {
     $( this ).toggleClass('open');
      });
 
-    $("#franchise_search input").keyup(function() 
+  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover()
+
+  $("#franchise_search input").keyup(function() 
     {
-      $.get($("#franchise_search").attr("action"), $("#franchise_search").serialize()+"&destination="+gon.destination,  null, "script");
-      return false;
-    });
-	
+    $.get($("#franchise_search").attr("action"), $("#franchise_search").serialize()+"&destination="+gon.destination,  null, "script");
+    return false;
+  });
+
+ 
 })
+
+
+
+
+  
+
+
+
+
+
+
+
+
 
 
 

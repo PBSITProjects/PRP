@@ -75,6 +75,7 @@ after_save :log_rebate_changed, if: :advanced_rebate_changed?
   validates :email,      presence: {message:  "Email cannot be blank"}  
   validates :phone,      presence: {message:  "Phone cannot be blank"}  
   validates :start_date, presence: {message:  "Start Date cannot be blank"}  
+  validates :firm_id, length: {is: 6, message: "Firm ID should be 6 digits"}, allow_blank: true, allow_nil: true
   validates :address,    presence: {message:  "Address cannot be blank"}  
   validates :city,       presence: {message:  "City cannot be blank"}  
   validates :state,      presence: {message:  "State cannot be blank"}  
@@ -83,6 +84,7 @@ after_save :log_rebate_changed, if: :advanced_rebate_changed?
   validates :advanced_rebate, numericality: {greater_than_or_equal_to: 0 ,  message: 'Negative advanced rebate not allowed'}
   validates :franchise_number, :uniqueness => {:scope => [:region, :office], message: 'This franchise entry already exists'}
   validates :email , format: {with: /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/, message: 'Invalid email format'}
+  validates :alt_email, format: {with: /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/, message: 'Invalid email format'}, allow_blank: true 
 
   #================================================================= 
   #Instance Methods  
@@ -122,6 +124,12 @@ after_save :log_rebate_changed, if: :advanced_rebate_changed?
     when 5
       "West"
     end
+  end
+
+  def set_dates(start_date, renew_date, term_date)
+    self.start_date = Date.strptime(start_date,I18n.translate('date.formats.default')) unless start_date.blank?
+    self.renew_date = Date.strptime(renew_date,I18n.translate('date.formats.default')) unless renew_date.blank?
+    self.term_date = Date.strptime(term_date,I18n.translate('date.formats.default')) unless term_date.blank?
   end
   #================================================================= 
   #Class Methods  

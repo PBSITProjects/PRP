@@ -1,0 +1,41 @@
+<div class = "card">
+  <div class = "card-header login_header">
+    Rebates
+  </div>
+  <form>
+    <div class = "card-body card-background-padgett">
+      <div class = 'form-row col-12'>
+        <!-- PHONE -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold">
+            Prior Year Rebate
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=number_to_currency(franchise.prior_year_rebate)%>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+
+      <div class = 'form-row col-12'>
+        <!-- MOBILE -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold">
+            Advanced Rebate
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.advanced_rebate%> %
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </form>
+</div> 
+

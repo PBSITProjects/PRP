@@ -9,8 +9,9 @@
       content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.min.css' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= include_gon(:init => true)  %>
     <link rel="shortcut icon" 
@@ -18,7 +19,7 @@
       href = <%=asset_pack_path "media/images/padgett.ico"%>>
   </head>
 
-  <body class="<%= controller_name %> <%= action_name %>">
+  <body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
     <!-- HERE WE WILL PUT THE if user_masquerade? -->
 
     <!-- NAVIGATION BAR -->

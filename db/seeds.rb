@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+=begin
 (2..20).each do |fnum| 
   Franchise.create(	
     area: "1",
@@ -57,3 +58,13 @@
     max_coll_year: 0,
     max_coll_month: 0)
 end
+=end
+
+Region.create({ "region_id"=>1, "region_number"=>"01", "area"=>"1", "description"=>"Southeast"})
+Region.create({ "region_id"=>2, "region_number"=>"02", "area"=>"1", "description"=>"Mid-Atlantic"})
+Region.create({ "region_id"=>3, "region_number"=>"03", "area"=>"1", "description"=>"Northeast Corridor"})
+Region.create({ "region_id"=>4, "region_number"=>"04", "area"=>"1", "description"=>"Mid-US"})
+Region.create({ "region_id"=>5, "region_number"=>"05", "area"=>"1", "description"=>"PBS West"})
+Region.create({ "region_id"=>19, "region_number"=>"19", "area"=>"1", "description"=>"Processing Centers"})
+Region.create({ "region_id"=>20, "region_number"=>"20", "area"=>"1", "description"=>"Corporate"})
+Region.create({ "region_id"=>0, "region_number"=>"00", "area"=>"1", "description"=>"Home Office"})

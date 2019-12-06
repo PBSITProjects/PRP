@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_10_162750) do
+ActiveRecord::Schema.define(version: 2019_11_01_153718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,13 @@ ActiveRecord::Schema.define(version: 2019_10_10_162750) do
     t.string "term_reason"
     t.index ["area", "mast", "region", "franchise_number", "office", "email", "inactive"], name: "office_index", unique: true
     t.index ["franchise_number"], name: "franchise_number"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.integer "region_id"
+    t.string "region_number"
+    t.string "area"
+    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|

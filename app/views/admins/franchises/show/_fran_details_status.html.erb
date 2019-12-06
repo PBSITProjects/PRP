@@ -1,0 +1,142 @@
+<div class = "card">
+  <div class = "card-header login_header">
+    Status  
+  </div>
+  <form>
+    <div class = "card-body card-background-padgett">
+      <div class = 'form-row col-12'>
+        <!-- START DATE -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold">
+            Start Date
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=l franchise.start_date if franchise.start_date%>
+            </div>
+          </div>
+        </div>
+
+        <!-- RENEW DATE -->
+        <div class="form-group form-row col-6">
+          <label class = 'col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold'>
+            Renewal Date
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=l franchise.renew_date if franchise.renew_date%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class = 'form-row col-12'>
+        <!-- SALESPERSON -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold">
+            Salesperson
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.salesman%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = 'form-row col-12'>
+        <!-- TERRITORY -->
+        <div class="form-group form-row col-12">
+          <label class = "col-sm-2 col-md-2 col-lg-2 col-form-label  label-bold">
+            Territory
+          </label>
+          <div class = "col-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.territory%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-divider">
+      </div>  
+      <div class = 'form-row col-12'>
+        <!-- NON COMPLIANT -->
+        <div class="form-group form-row col-12">
+          <label class = "col-sm-2 col-md-2 col-lg-2 col-form-label  label-bold">
+            Non Compliant
+          </label>
+          <div class = "col-8">
+             <div class= 'form-control-plaintext'>
+              <%=franchise.non_compliant == 1 ? "Yes" : "No" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = 'form-row col-12'>
+        <!-- NON COMPLIANT REASON -->
+        <div class="form-group form-row col-12">
+          <label class = "col-sm-2 col-md-2 col-lg-2 col-form-label  label-bold">
+            Reason
+          </label>
+          <div class = "col-8">
+             <div class= 'form-control-plaintext'>
+              <%=franchise.non_compliant_reason%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-divider">
+      </div>  
+      <!-- INACTIVE -->
+      <div class="form-group form-row col-12">
+        <label class = "col-sm-2 col-md-2 col-lg-2 col-form-label  label-bold">
+          Inactive
+        </label>
+        <div class = "col-8">
+          <div class= 'form-control-plaintext'>
+            <%=franchise.inactive == 1 ? "Yes" : "No" %>
+          </div>
+        </div>
+      </div>
+
+      <div class = 'form-row col-12'>
+        <!-- START DATE -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold">
+            Termination Date
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=l franchise.term_date if franchise.term_date%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = 'form-row col-12'>
+        <!-- NON COMPLIANT REASON -->
+        <div class="form-group form-row col-12">
+          <label class = "col-sm-2 col-md-2 col-lg-2 col-form-label  label-bold">
+            Reason
+          </label>
+          <div class = "col-8">
+             <div class= 'form-control-plaintext'>
+              <%=franchise.term_reason%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "dropdown-divider"></div>
+      <!-- EXEPMT COLLECT -->
+      <div class="form-group form-row col-12">
+        <label class = "col-sm-2 col-md-2 col-lg-2 col-form-label  label-bold">
+          Exepmted Collections
+        </label>
+        <div class = "col-8">
+          <div class= 'form-control-plaintext'>
+            <%=franchise.show_exempt_collect == 1 ? "Yes" : "No" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div> 
+

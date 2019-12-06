@@ -20,7 +20,7 @@ class FranchisesController < ApplicationController
   #Make sure a franchise cannot edit another franchise record
   def validate_franchise
   	fran = Franchise.find(params[:id])
-  	redirect_to (root_url) unless (fran,id == current_user.franchise_id)
+  	redirect_to (root_url) unless (fran.id == current_user.franchise_id)
   end
 
   #Set the franchise instance variable for use in different methods

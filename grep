@@ -1,0 +1,70 @@
+                               Prefix Verb   URI Pattern                                                                              Controller#Action
+                    new_admin_session GET    /admins/sign_in(.:format)                                                                admins/sessions#new
+                        admin_session POST   /admins/sign_in(.:format)                                                                admins/sessions#create
+                destroy_admin_session DELETE /admins/sign_out(.:format)                                                               admins/sessions#destroy
+                   new_admin_password GET    /admins/password/new(.:format)                                                           devise/passwords#new
+                  edit_admin_password GET    /admins/password/edit(.:format)                                                          devise/passwords#edit
+                       admin_password PATCH  /admins/password(.:format)                                                               devise/passwords#update
+                                      PUT    /admins/password(.:format)                                                               devise/passwords#update
+                                      POST   /admins/password(.:format)                                                               devise/passwords#create
+                     new_user_session GET    /users/sign_in(.:format)                                                                 users/sessions#new
+                         user_session POST   /users/sign_in(.:format)                                                                 users/sessions#create
+                 destroy_user_session DELETE /users/sign_out(.:format)                                                                users/sessions#destroy
+                    new_user_password GET    /users/password/new(.:format)                                                            devise/passwords#new
+                   edit_user_password GET    /users/password/edit(.:format)                                                           devise/passwords#edit
+                        user_password PATCH  /users/password(.:format)                                                                devise/passwords#update
+                                      PUT    /users/password(.:format)                                                                devise/passwords#update
+                                      POST   /users/password(.:format)                                                                devise/passwords#create
+                                      GET    /404(.:format)                                                                           errors#not_found
+                                      GET    /422(.:format)                                                                           errors#unacceptable
+                               signup GET    /signup(.:format)                                                                        signups#index
+                                      POST   /signup(.:format)                                                                        signups#create
+                   authenticated_user GET    /                                                                                        public#userpage
+                                users GET    /users(.:format)                                                                         users#index
+                                      POST   /users(.:format)                                                                         users#create
+                             new_user GET    /users/new(.:format)                                                                     users#new
+                            edit_user GET    /users/:id/edit(.:format)                                                                users#edit
+                                 user GET    /users/:id(.:format)                                                                     users#show
+                                      PATCH  /users/:id(.:format)                                                                     users#update
+                                      PUT    /users/:id(.:format)                                                                     users#update
+                                      DELETE /users/:id(.:format)                                                                     users#destroy
+                       edit_franchise GET    /franchises/:id/edit(.:format)                                                           franchises#edit
+                  authenticated_admin GET    /                                                                                        public#adminpage
+                          logster_web        /logs                                                                                    Logster::Web
+                          sidekiq_web        /sidekiq                                                                                 Sidekiq::Web
+                        admins_admins GET    /admins/admins(.:format)                                                                 admins/admins#index
+                                      POST   /admins/admins(.:format)                                                                 admins/admins#create
+                     new_admins_admin GET    /admins/admins/new(.:format)                                                             admins/admins#new
+                    edit_admins_admin GET    /admins/admins/:id/edit(.:format)                                                        admins/admins#edit
+                         admins_admin GET    /admins/admins/:id(.:format)                                                             admins/admins#show
+                                      PATCH  /admins/admins/:id(.:format)                                                             admins/admins#update
+                                      PUT    /admins/admins/:id(.:format)                                                             admins/admins#update
+                                      DELETE /admins/admins/:id(.:format)                                                             admins/admins#destroy
+                    admins_franchises GET    /admins/franchises(.:format)                                                             admins/franchises#index
+                                      POST   /admins/franchises(.:format)                                                             admins/franchises#create
+                 new_admins_franchise GET    /admins/franchises/new(.:format)                                                         admins/franchises#new
+                edit_admins_franchise GET    /admins/franchises/:id/edit(.:format)                                                    admins/franchises#edit
+                     admins_franchise GET    /admins/franchises/:id(.:format)                                                         admins/franchises#show
+                                      PATCH  /admins/franchises/:id(.:format)                                                         admins/franchises#update
+                                      PUT    /admins/franchises/:id(.:format)                                                         admins/franchises#update
+                                      DELETE /admins/franchises/:id(.:format)                                                         admins/franchises#destroy
+                                 root GET    /                                                                                        public#main
+        rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails(.:format)                                  action_mailbox/ingresses/mandrill/inbound_emails#create
+        rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
+           rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create
+        rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                  action_mailbox/ingresses/sendgrid/inbound_emails#create
+         rails_mailgun_inbound_emails POST   /rails/action_mailbox/mailgun/inbound_emails/mime(.:format)                              action_mailbox/ingresses/mailgun/inbound_emails#create
+       rails_conductor_inbound_emails GET    /rails/conductor/action_mailbox/inbound_emails(.:format)                                 rails/conductor/action_mailbox/inbound_emails#index
+                                      POST   /rails/conductor/action_mailbox/inbound_emails(.:format)                                 rails/conductor/action_mailbox/inbound_emails#create
+    new_rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/new(.:format)                             rails/conductor/action_mailbox/inbound_emails#new
+   edit_rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/:id/edit(.:format)                        rails/conductor/action_mailbox/inbound_emails#edit
+        rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                             rails/conductor/action_mailbox/inbound_emails#show
+                                      PATCH  /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                             rails/conductor/action_mailbox/inbound_emails#update
+                                      PUT    /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                             rails/conductor/action_mailbox/inbound_emails#update
+                                      DELETE /rails/conductor/action_mailbox/inbound_emails/:id(.:format)                             rails/conductor/action_mailbox/inbound_emails#destroy
+rails_conductor_inbound_email_reroute POST   /rails/conductor/action_mailbox/:inbound_email_id/reroute(.:format)                      rails/conductor/action_mailbox/reroutes#create
+                   rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+            rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+                   rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+            update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+                 rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

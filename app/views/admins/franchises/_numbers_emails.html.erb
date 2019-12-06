@@ -1,0 +1,82 @@
+<div class = "card">
+  <div class = "card-header login_header">
+    Contact Numbers & Emails
+  </div>
+  
+  <div class = "card-body card-background-padgett">
+    <div class = "form-row col-12">
+      <!-- PHONE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :phone, "Phone",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-5 col-md-4 col-lg-3">
+          <%=f.telephone_field :phone,
+          class: 'form-control form-control-sm col',
+          'data-mask': '(000) 000-0000', 'placeholder': '(___) ___-____', required: true%>
+        </div>
+      </div>
+      <!-- ALTERNATE PHONE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :phone2, "Alt. Phone",
+        class: 'col-md-4 col-sm-4 col-lg-4
+          col-form-label-sm label-bold'%>
+        <div class = "col-sm-5 col-md-4 col-lg-3">
+          <%= f.text_field :phone2,
+          class: "form-control form-control-sm col",
+          'data-mask': '(000) 000-0000', 'placeholder': '(___) ___-____'%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- MOBILE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :mobile, "Mobile",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-5 col-md-4 col-lg-3">
+          <%=f.telephone_field :mobile,
+          class: 'form-control form-control-sm col',
+          'data-mask': '(000) 000-0000',
+          'placeholder': '(___) ___-____'%>
+        </div>
+      </div>
+      <!-- FAX -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :fax, "Fax",
+        class: 'col-md-4 col-sm-4 col-lg-4
+          col-form-label-sm label-bold'%>
+        <div class = "col-sm-5 col-md-4 col-lg-3">
+          <%= f.text_field :fax,
+          class: "form-control form-control-sm col",
+          'data-mask': '(000) 000-0000',
+          'placeholder': '(___) ___-____'%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- EMAIL -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :email, "Email",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-6 col-md-6 col-lg-6">
+          <%=f.email_field :email,
+          class: 'form-control form-control-sm col',
+           required: true%>
+        </div>
+      </div>
+      <!-- ALTERNATE PHONE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :alt_email, "Alt. Email",
+        class: 'col-md-4 col-sm-4 col-lg-4
+          col-form-label-sm label-bold'%>
+        <div class = "col-sm-6 col-md-6 col-lg-6">
+          <%= f.email_field :alt_email,
+          class: "form-control form-control-sm col"
+          %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

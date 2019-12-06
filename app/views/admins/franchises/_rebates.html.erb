@@ -1,0 +1,42 @@
+<div class = "card">
+  <div class = "card-header login_header">
+    Rebates
+  </div>
+  
+  <div class = "card-body card-background-padgett">
+    <div class = "form-row col-12">
+      <!-- PRIOR YEAR REBATE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :prior_year_rebate, "Prior Year Rebate",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-5 col-md-4 col-lg-3">
+          <div class = "input-group input-group-sm">
+            <div class = "input-group-prepend">
+              <span class="input-group-text">$</span>
+              <%=f.number_field :prior_year_rebate, step: :any,
+              class: 'form-control form-control-sm col text-right'%>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- ADVANCED REBATE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :advanced_rebate, "Advanced Rebate",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-5 col-md-4 col-lg-2">
+          <div class = "input-group input-group-sm">
+            <%=f.number_field :advanced_rebate, step: :any,
+            class: 'form-control form-control-sm col text-right'%>
+            <div class = "input-group-append">
+              <span class="input-group-text">%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

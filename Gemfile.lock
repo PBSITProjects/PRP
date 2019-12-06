@@ -70,6 +70,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     byebug (11.0.1)
+    cancan (1.6.10)
     capybara (3.29.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -306,6 +307,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   bullet
   byebug
+  cancan
   capybara (= 3.29.0)
   database_cleaner
   devise

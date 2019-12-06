@@ -3,10 +3,8 @@ class PublicController < ApplicationController
   end
 
   def userpage
-
   end
 
   def adminpage
-
   end
 end

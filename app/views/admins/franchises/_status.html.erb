@@ -1,0 +1,137 @@
+<div class = "card">
+  <div class = "card-header login_header">
+    Franchise Status
+  </div>
+  
+  <div class = "card-body card-background-padgett">
+    <div class = "form-row col-12">
+      <!-- START DATE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :start_date, "Start Date",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-5 col-md-5 col-lg-4">
+          <%=f.text_field :start_date, value: (l f.object.start_date if f.object.start_date),
+          class: 'form-control form-control-sm col text-center',
+          id: "franchise_start_date"  , style: "display:inline-block; vertical-align: middle; width: 60%;margin: 0 5px 0 0;",
+           required: true%>
+        </div>
+      </div>
+      <!-- RENEW DATE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :renew_date, "Renewal Date",
+        class: 'col-md-4 col-sm-4 col-lg-4
+          col-form-label-sm label-bold'%>
+        <div class = "col-sm-5 col-md-5 col-lg-4">
+          <%= f.text_field :renew_date, value: (l f.object.renew_date if f.object.renew_date),
+          class: 'form-control form-control-sm col text-center',
+          id: "franchise_renew_date"  , style: "display:inline-block; vertical-align: middle; width: 60%;margin: 0 5px 0 0;"%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- SALESPERSON -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :salesman, "Salesperson",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-7 col-md-7 col-lg-7">
+          <%=f.text_field :salesman,
+          class: 'form-control form-control-sm col'%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- TERRITORY -->
+      <div class = "form-group form-row col-12">
+        <%=f.label :territory, "Territory",
+        class: "col-md-2 col-sm-2 col-lg-2 
+        col-form-label-sm label-bold" %>
+        <div class = "col-8">
+          <%=f.text_field :territory,
+          class: 'form-control form-control-sm col'%>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown-divider">
+      </div>  
+    <div class = "form-row col-12">
+      <!-- NON COMPLIANT -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :non_compliant, "Non Compliant",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-6 col-md-6 col-lg-6">
+          <%=f.check_box :non_compliant,
+          class: 'form-control form-control-sm col', style: "width:15px;vertical-align:middle"%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- NON COMPLIANT REASON -->
+      <div class = "form-group form-row col-12">
+        <%=f.label :non_compliant_reason, "Reason",
+        class: "col-md-2 col-sm-2 col-lg-2 
+        col-form-label-sm label-bold" %>
+        <div class = "col-8">
+          <%=f.text_field :non_compliant_reason,
+          class: 'form-control form-control-sm col'%>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown-divider">
+      </div>  
+    <div class = "form-row col-12">
+      <!-- INACTIVE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :inactive, "Inactive",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-6 col-md-6 col-lg-6">
+          <%=f.check_box :inactive,
+          class: 'form-control form-control-sm col', style: "width:15px;vertical-align:middle"%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- TERM DATE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :term_date, "Termination Date",
+        class: "col-md-6 col-sm-6 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-5 col-md-5 col-lg-4">
+          <%=f.text_field :term_date, value: (l f.object.term_date if f.object.term_date),
+          class: 'form-control form-control-sm col text-center',
+          id: "franchise_term_date"  , style: "display:inline-block; vertical-align: middle; width: 60%;margin: 0 5px 0 0;"%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- TERM REASON -->
+      <div class = "form-group form-row col-12">
+        <%=f.label :term_reason, "Reason",
+        class: "col-md-2 col-sm-2 col-lg-2 
+        col-form-label-sm label-bold" %>
+        <div class = "col-8">
+          <%=f.text_field :term_reason,
+          class: 'form-control form-control-sm col'
+          %>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown-divider">
+      </div>  
+    <div class = "form-row col-12">
+      <!-- EXEMPT COLLECTIONS -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :show_exempt_collect, "Exempted Collections",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-6 col-md-6 col-lg-6">
+          <%=f.check_box :show_exempt_collect,
+          class: 'form-control form-control-sm col', style: "width:15px;vertical-align:middle"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

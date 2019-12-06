@@ -1,0 +1,124 @@
+<div class = "card">
+  <div class = "card-header login_header">
+
+    <h4>
+      <%if action == "edit"%>
+        Franchise Profile of <%=@franchise.number_and_name%>
+      <%else%>
+        Create New Franchise
+      <%end%>
+    </h4>
+  </div>
+  <%= form_for [:admins, franchise] do |f| %>
+    <%=f.hidden_field :mast, value: f.object.mast%>
+    <%=f.hidden_field :area, value: f.object.area%>
+    <div class = "card-body card-background-padgett">
+      <div class = "form-row col-12">
+        <!-- REGION -->
+        <div class = "form-group form-row col-6">
+  	      <%=f.label :region, "Region",
+  	      class: "col-md-4 col-sm-4 col-lg-4 
+            col-form-label col-form-label-sm label-bold" %>
+  	      <div class = "col-sm-5 col-md-5 col-lg-4">
+  		    <%=f.collection_select :region,
+  		    Region.by_area('1'),
+  		    :region_id,
+  		    :description,{prompt: "Select a Region"},
+  		    {class: 'form-control form-control-sm col', required: true}%>
+          </div>
+        </div>
+        <!-- FRANCHISE NUMBER -->
+        <div class = "form-group form-row col-6">
+          <%=f.label :franchise_number, "Franchise",
+           class: 'col-md-4 col-sm-4 col-lg-4 col-form-label-sm label-bold'%>
+          <div class = "col-sm-5 col-md-4 col-lg-3">
+      	    <%= f.text_field :franchise_number,
+      	    class: "form-control form-control-sm col", required: true%>
+          </div>
+        </div>
+      </div>
+      <div class = "form-row col-12">
+  	    <!-- OFFICE -->
+  	    <div class = "form-group form-row col-6">
+  	      <%=f.label :office, "Office",
+          class: 'col-md-4 col-sm-4 col-lg-4 col-form-label-sm label-bold'%>
+          <div class = "col-lg-2 col-md-3 col-sm-3">
+      	    <%= f.text_field :office,
+      	    class: "form-control form-control-sm col", required: true%>
+          </div>   
+  	    </div>
+        <!-- FIRM ID -->
+        <div class = "form-group form-row col-6">
+  	      <%=f.label :firm_id, "Firm ID",
+           class: 'col-md-4 col-sm-4 col-lg-4 col-form-label-sm label-bold'%>
+          <div class = "col-sm-5 col-md-5 col-lg-3">
+      	    <%= f.text_field :firm_id, maxlength: 6, 
+      	    class: "form-control form-control-sm col", required: true%>
+          </div>   
+  	    </div>
+      </div>
+    <div class = "form-row col-12">
+  	  <!-- LAST NAME -->
+  	  <div class = "form-group form-row col-6">
+  	    <%=f.label :lastname, "Last Name",
+          class: 'col-md-4 col-sm-4 col-lg-4 col-form-label-sm label-bold'%>
+        <div class = "col-sm-6 col-md-6 col-lg-5">
+      	  <%= f.text_field :lastname,
+      	    class: "form-control form-control-sm col", required: true%>
+        </div>   
+  	  </div>
+  	  <!-- FIRST NAME -->
+  	  <div class = "form-group form-row col-6">
+  	    <%=f.label :firstname, "First Name",
+          class: 'col-md-4 col-sm-4 col-lg-4 col-form-label-sm label-bold'%>
+        <div class = "col-sm-6 col-md-6 col-lg-5">
+      	  <%= f.text_field :firstname,
+      	    class: "form-control form-control-sm col", required: true%>
+        </div>   
+  	  </div>
+    </div>
+    <div class = "form-row col-12">
+  	  <!-- MIDDLE INITIAL -->
+  	  <div class = "form-group form-row col-6">
+  	    <%=f.label :initial, "Middle Initial",
+          class: 'col-md-4 col-sm-4 col-lg-4 col-form-label-sm label-bold'%>
+        <div class = "col-sm-3 col-md-3 col-lg-2">
+      	  <%= f.text_field :initial,
+        	  class: "form-control form-control-sm col"%>
+        </div>   
+  	  </div>
+  	  <!-- SALUTATION -->
+  	  <div class = "form-group form-row col-6">
+  	    <%=f.label :salutation, "Salutation",
+          class: 'col-md-4 col-sm-4 col-lg-4 col-form-label-sm label-bold'%>
+        <div class = "col-sm-3 col-md-3 col-lg-2">
+      	  <%= f.text_field :salutation,
+      	    class: "form-control form-control-sm col"%>
+        </div>   
+   	  </div>
+    </div>
+  
+    <br />
+    <!-- Mailing , Shipping and Home Addressed -->
+    <%=render partial: "addresses", locals: {f: f}%>
+  </div>
+ </div>  
+<br />
+<%=render partial: "numbers_emails", locals: {f: f}%>
+<br />
+<%=render partial: "status", locals: {f: f}%>
+<br />
+<%=render partial: "rebates", locals: {f: f}%>
+<br />
+<div class = "row col-6">
+  <%=f.submit "Save Changes", class: 'btn btn-padgett col-md-3 col-lg-3', name: "submit" %>
+  <div class = "col-md-2 col-lg-2"></div>
+  <%=link_to "Return", admins_franchises_path, class: 'btn btn-padgett col-md-3 col-lg-3' %>
+</div>
+
+<%end%>
+
+
+
+
+

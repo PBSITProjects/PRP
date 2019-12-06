@@ -7,11 +7,11 @@ module DisplayHelper
   #Throughout the app, we have the same links to 
 #Edit, Show, Delete with the same icons
 #This helper was created to minimize code in the view
-def link_with_icon(link, action, description,confirm="")
+def link_with_icon(link, action, description,confirm="",turbo=true)
   case action 
   when "show"
     a_tag = <<-HTML
-    <a href="#{link}">
+    <a data-turbolinks="#{turbo}" href="#{link}">
     <i class="far fa-file-alt fa-lg padgett-blue-icon" 
     aria-hidden="true" 
     data-html = "true" 
@@ -22,7 +22,7 @@ def link_with_icon(link, action, description,confirm="")
     HTML
   when "edit"
     a_tag = <<-HTML
-    <a href="#{link}">
+    <a data-turbolinks="#{turbo}" href="#{link}">
     <i class="far fa-edit fa-lg padgett-blue-icon" 
     aria-hidden="true" 
     data-html = "true" 

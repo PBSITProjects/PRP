@@ -19,6 +19,10 @@ $dropdown-link-color: var(--padgett-blue);
  color: var(--padgett-blue);
 }
 
+.padgett-green-icon {
+ color: var(--padgett-green);
+}
+
 
 .padgett-blue-icon:hover{
   color: lighten(#002b7f,20%);
@@ -30,8 +34,21 @@ $dropdown-link-color: var(--padgett-blue);
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   margin-top: 60px;
+}
+
+.form-group{
+  margin-bottom: 0.50rem;
+
+}
+
+.label-bold {
+  font-weight: bold;
+}
+
+.card-background-padgett{
+  background: rgba(0, 43, 127, 0.05)
 }
 
 .login_header{
@@ -39,6 +56,9 @@ body {
   color: white
 }
 
+.padgett_blue_background{
+  background-color: var(--padgett-blue);
+}
 
 .btn-padgett{
   @include button-variant(#002b7f, darken(#002b7f,7.5%),lighten(#002b7f,10%),lighten(#002b7f,5%),lighten(#002b7f,10%),darken(#002b7f,30%))
@@ -348,6 +368,10 @@ table.table.table-dan td {
   float: left;
 }
 
+.field_with_errors {
+  display: inline;
+}
+
 .field_with_errors input{
   border: 1px solid red !important;
 }
@@ -355,6 +379,8 @@ table.table.table-dan td {
 .field_with_errors select{
   border: 1px solid red !important;
 }
+
+
 
 
 .form-horizontal .control-label{
@@ -501,6 +527,20 @@ select:required{
 input:required:focus {
   border: 1px solid green;
   outline: none;
+}
+
+.card-title+h3:before {
+  font-family: 'Font Awesome 5 Free' ;
+  font-weight: 400;
+  content: "\f146";
+  padding-right: 5px;
+}
+
+.card-title+h3.collapsed:before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+  content: "\f0fe";
+  padding-right: 5px;
 }
 
 .panel-title+h3:before {

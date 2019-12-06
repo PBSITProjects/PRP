@@ -1,0 +1,339 @@
+<div class = "card">
+  <form>
+    <div class = "card-body card-background-padgett">
+      <div class = 'form-row col-12'>
+        <!-- REGION -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label label-bold">
+            Region
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=Region.get_desc(franchise.region)%>
+            </div>
+          </div>
+        </div>
+
+        <!-- FRANCHISE -->
+        <div class="form-group form-row col-6">
+          <label class = 'col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold'>
+            Franchise
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.franchise_number%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class = 'form-row col-12'>
+        <!-- OFFICE -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold">
+            Office
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.office%>
+            </div>
+          </div>
+        </div>
+
+        <!-- FIRM ID -->
+        <div class="form-group form-row col-6">
+          <label class = 'col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold'>
+            Firm ID
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.firm_id%>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class = 'form-row col-12'>
+        <!-- LASTNAME -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold">
+            Last Name
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.lastname%>
+            </div>
+          </div>
+        </div>
+
+        <!-- FIRSTNAME -->
+        <div class="form-group form-row col-6">
+          <label class = 'col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold'>
+            First Name
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.firstname%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class = 'form-row col-12'>
+        <!-- MIDDLE INITIAL -->
+        <div class="form-group form-row col-6">
+          <label class = "col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold">
+              Middle Initial
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.initial%>
+            </div>
+          </div>
+        </div>
+
+        <!-- SALUTATION -->
+        <div class="form-group form-row col-6">
+          <label class = 'col-sm-6 col-md-4 col-lg-4 col-form-label  label-bold'>
+            Salutation
+          </label>
+          <div class = "col-sm-5 col-md-5 col-lg-8">
+            <div class= 'form-control-plaintext'>
+              <%=franchise.salutation%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class = "form-row">
+        <div  class ="col-lg-4 no-padding">
+          <div class = "card" style="padding:1px; border:0px;">
+            <div class = "card-header login_header">
+              Mailing Address
+            </div>
+            <div class = "card-body card-background-padgett">
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    Address
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.address%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                   
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8 col">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.address2%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    City
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.city%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    State
+                  </label>
+                  <div class = "col-sm-4 col-md-4 col-lg-4">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.state%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    Zip
+                  </label>
+                  <div class = "col-sm-5 col-md-5 col-lg-5">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.zip_code%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div  class ="col-lg-4 no-padding">
+          <div class = "card" style="padding:1px; border:0px;">
+            <div class = "card-header login_header">
+              Shipping Address
+            </div>
+            <div class = "card-body card-background-padgett">
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                  label-bold'>
+                    Address
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.ship_address%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8 col">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.ship_address2%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    City
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.ship_city%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    State
+                  </label>
+                  <div class = "col-sm-4 col-md-4 col-lg-4">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.ship_state%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    Zip
+                  </label>
+                  <div class = "col-sm-5 col-md-5 col-lg-5">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.ship_zip_code%>
+                    </div>
+                  </div>   
+                </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+        <div  class ="col-lg-4 no-padding">
+          <div class = "card" style="padding:1px; border:0px;">
+            <div class = "card-header login_header">
+              Home Address
+            </div>
+            <div class = "card-body card-background-padgett">
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    Address
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.home_address%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8 col">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.home_address2%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    City
+                  </label>
+                  <div class = "col-sm-8 col-md-8 col-lg-8">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.home_city%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label
+                   label-bold'>
+                    State
+                  </label>
+                  <div class = "col-sm-4 col-md-4 col-lg-4">
+                    <div class= "form-control-plaintext">  
+                      <%=franchise.home_state%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class = "form-group form-row col-12">
+                  <label class = 'col-md-4 col-sm-4 col-lg-4 col-form-label label-bold'>
+                    Zip
+                  </label>
+                  <div class = "col-sm-5 col-md-5 col-lg-5">
+                    <div class= "form-control-plaintext">
+                      <%=franchise.home_zip_code%>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div> 
+<br />
+<%= render :partial => 'admins/franchises/show/fran_details_contact', :locals => {:franchise => @franchise} %> 
+<br />
+<%= render :partial => 'admins/franchises/show/fran_details_status', :locals => {:franchise => @franchise} %> 
+<br />
+<%= render :partial => 'admins/franchises/show/fran_details_rebates', :locals => {:franchise => @franchise} %> 

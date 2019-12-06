@@ -1,0 +1,200 @@
+<div class = "row">
+  <div class ="col-lg-4 no-padding">
+    <div class = "card" style="padding:1px; border:0px;">
+      <div class = "card-header login_header">
+        Mailing Address
+      </div>
+      <div class = "card-body card-background-padgett">
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :address, "Address",
+            class: 'col-md-4 col-sm-4 col-lg-4
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :address,
+              class: "form-control form-control-sm col", required: true%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :address2, "&nbsp;".html_safe,
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8 col">
+              <%= f.text_field :address2,
+              class: "form-control form-control-sm col"%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :city, "City",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :city,
+              class: "form-control form-control-sm col", required: true%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :state, "State",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-4 col-md-4 col-lg-4">
+              <%= f.text_field :state,
+              class: "form-control form-control-sm col",
+              maxlength: 2, size: 2, required: true%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :zip_code, "Zip",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-5 col-md-5 col-lg-5">
+              <%= f.text_field :zip_code,
+              class: "form-control form-control-sm col",
+              'data-mask': '00000-0000', required: true%>
+            </div>   
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "col-lg-4 no-padding">
+    <div class = "card" style="padding:1px;border:0px;">
+      <div class = "card-header login_header">
+        Shipping Address
+      </div>
+      <div class = "card-body card-background-padgett">
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :ship_address, "Address",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :ship_address,
+              class: "form-control form-control-sm col"%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :ship_address2, "&nbsp;".html_safe,
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8 col">
+              <%= f.text_field :ship_address2,
+              class: "form-control form-control-sm col"%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :ship_city, "City",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :ship_city,
+              class: "form-control form-control-sm col"%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :ship_state, "State",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-4 col-md-4 col-lg-4">
+              <%= f.text_field :ship_state,
+              class: "form-control form-control-sm col",
+              maxlength: 2 , size: 2  %>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :ship_zip_code, "Zip",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-5 col-md-5 col-lg-5">
+              <%= f.text_field :ship_zip_code,
+              class: "form-control form-control-sm col",
+              'data-mask': '00000-0000'  %>
+            </div>   
+          </div>
+        </div>
+     </div>
+    </div>
+  </div>
+  <div class = "col-lg-4 no-padding">
+    <div class = "card" style="padding:1px;border:0px;">
+      <div class = "card-header login_header">
+        Home Address
+      </div>
+      <div class = "card-body card-background-padgett">
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :home_address, "Address",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :home_address,
+              class: "form-control form-control-sm col"%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :home_address2, "&nbsp;".html_safe,
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8 col">
+              <%= f.text_field :home_address2,
+              class: "form-control form-control-sm col"%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :home_city, "City",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :home_city,
+              class: "form-control form-control-sm col"%>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :home_state, "State",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-4 col-md-4 col-lg-4">
+              <%= f.text_field :home_state,
+              class: "form-control form-control-sm col",
+              maxlength: 2 , size: 2  %>
+            </div>   
+          </div>
+        </div>
+        <div class = "form-row">
+          <div class = "form-group form-row col-12">
+            <%=f.label :home_zip_code, "Zip",
+            class: 'col-md-4 col-sm-4 col-lg-4 
+              col-form-label-sm label-bold'%>
+            <div class = "col-sm-5 col-md-5 col-lg-5">
+              <%= f.text_field :home_zip_code,
+              class: "form-control form-control-sm col",
+              'data-mask': '00000-0000'  %>
+            </div>   
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
