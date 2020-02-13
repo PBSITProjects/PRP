@@ -1,0 +1,76 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+
+  <table class="table table-sm table-striped table-dan ">
+    <thead>
+      <tr>
+        <!-- Franchise Number -->
+        <th scope = "col" style="text-align:left">
+          <%=sortable "franchises.franchise_number", "Franchise" %>
+        </th>
+
+        
+
+        <!-- Accountant  -->
+        <th scope = "col" style="text-align:left">
+          Accountant
+        </th>
+
+        <!-- Lastname  -->
+        <th scope = "col" style="text-align:left">
+          <%=sortable "lastname" , "Last Name" %>
+        </th>
+        <th scope = "col" style="text-align:left">
+          <%=sortable "firstname" , "First Name" %>
+        </th>
+        <!-- For Edit link we have 2 other columns  -->
+        <th scope = "col"></th>
+        
+      </tr>
+    </thead>
+    <!-- Go through our filtered franchises  -->
+    <% @accountants.each do |accountant| %>
+      <tr>
+        <!-- Franchise  -->
+        <th  align="left" class = "text-nowrap">
+          <%=accountant.franchise.franchise_number %>   <%=accountant.franchise.full_name%> 
+        </td>
+        <!-- Accountant Number  -->
+        <td align="left" class = "text-nowrap">
+          <%=accountant.accountant_num%>
+
+        </td>
+        <!-- Lastname  -->
+        <td align="left" class = "text-nowrap">
+          <%=accountant.lastname%> 
+        </td>
+
+        <!-- Firstname  -->
+        <td align="left" class = "text-nowrap">
+          <%=accountant.firstname%> 
+        </td>
+        <!-- Edit Icon and Link  -->
+        <%if can? :edit, accountant%>
+          <td class = "text-nowrap">
+            <%=link_with_icon(edit_admins_accountant_path(id:accountant.id),
+                "edit",
+                "Edit this accountant",
+                "",
+                false)%> 
+          </td>
+        <%else%>
+          <td></td>
+        <%end%>
+        
+      </tr>
+    <% end %>
+  </table>
+  <!-- Pagination Links  -->
+  <div class = "row justify-content-center">
+    <div class = "flickr_pagination">
+      <%= will_paginate @accountants %>
+    </div>
+  </div>
+
+

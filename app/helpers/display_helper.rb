@@ -11,7 +11,8 @@ def link_with_icon(link, action, description,confirm="",turbo=true)
   case action 
   when "show"
     a_tag = <<-HTML
-    <a data-turbolinks="#{turbo}" href="#{link}">
+    <a data-turbolinks="#{turbo}" href="#{link}" class="show-link"
+    >
     <i class="far fa-file-alt fa-lg padgett-blue-icon" 
     aria-hidden="true" 
     data-html = "true" 
@@ -22,7 +23,7 @@ def link_with_icon(link, action, description,confirm="",turbo=true)
     HTML
   when "edit"
     a_tag = <<-HTML
-    <a data-turbolinks="#{turbo}" href="#{link}">
+    <a data-turbolinks="#{turbo}" href="#{link}" class = "edit-link">
     <i class="far fa-edit fa-lg padgett-blue-icon" 
     aria-hidden="true" 
     data-html = "true" 
@@ -34,7 +35,7 @@ def link_with_icon(link, action, description,confirm="",turbo=true)
 
   when "delete" 
     a_tag = <<-HTML
-    <a data-confirm="#{confirm}" rel="nofollow" data-method="delete" href="#{link}">
+    <a data-confirm="#{confirm}" rel="nofollow" data-method="delete" href="#{link}" class="delete-link">
     <i class="far fa-trash fa-lg padgett-blue-icon" 
     aria-hidden="true" 
     data-html = "true" 

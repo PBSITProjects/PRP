@@ -1,0 +1,51 @@
+<div class = "card">
+  <div class = "card-header login_header">
+    Spouse Information
+  </div>
+  
+  <div class = "card-body card-background-padgett">
+    <div class = "form-row col-12">
+      <!-- SPOUSE NAME -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :spouse_name, "Spouse Name",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-6 col-md-6 col-lg-6">
+          <%=f.text_field :spouse_name,
+          class: 'form-control form-control-sm col'%>
+        </div>
+      </div>
+      <!-- SPOUSE BIRTHDATE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :spouse_birthdate, "Spouse Birth Date",
+        class: 'col-md-4 col-sm-4 col-lg-4
+          col-form-label-sm label-bold'%>
+        <div class = "col-sm-5 col-md-5 col-lg-4">
+          <%= f.text_field :spouse_birthdate, value: (l f.object.spouse_birthdate if f.object.spouse_birthdate),
+          class: 'form-control form-control-sm col text-center',
+          id: "accountant_spouse_birth_date"  , style: "display:inline-block; vertical-align: middle; width: 60%;margin: 0 5px 0 0;"%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      <!-- SPOUSE PARTNER -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :spouse_partner, "Spouse Partner",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-7 col-md-7 col-lg-7">
+          <%=f.check_box :spouse_partner,
+          class: 'form-control form-control-sm col', style: "width:15px;vertical-align:middle"%>
+        </div>
+      </div>
+       
+      <div class = "form-group form-row col-6">
+
+      </div>
+    </div>
+    
+    
+    
+   
+  </div>
+</div>  

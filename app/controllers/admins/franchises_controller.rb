@@ -23,12 +23,13 @@ class Admins::FranchisesController < ApplicationController
 
   def new
     @franchise = Franchise.new(area: 1, mast: 0)
+    authorize! :new, @franchise
   end
 
   def create
     @franchise = Franchise.new(franchise_params)
     @franchise.set_dates(franchise_params[:start_date], franchise_params[:renew_date], franchise_params[:term_date])
-
+    authorize! :create, @franchise 
     if @franchise.save
       flash[:success] = 'Franchise Created Successfully'
       redirect_to admins_franchises_path 
@@ -42,8 +43,10 @@ class Admins::FranchisesController < ApplicationController
   end
 
   def update
+    authorize! :update, @franchise
     @franchise.assign_attributes(franchise_params)
-    set_dates(franchise_params)
+    @franchise.set_dates(franchise_params[:start_date], franchise_params[:renew_date], franchise_params[:term_date])
+
     if @franchise.save
       flash[:success] = "Franchise profile modified successfully"
       redirect_to admins_franchises_path
@@ -72,11 +75,7 @@ class Admins::FranchisesController < ApplicationController
     @franchise = Franchise.find(params[:id])
   end
 
-  def set_dates(fp)
-    @franchise.start_date = Date.strptime(fp[:start_date],I18n.translate('date.formats.default')) unless fp[:start_date].blank?
-    @franchise.renew_date = Date.strptime(fp[:renew_date],I18n.translate('date.formats.default')) unless fp[:renew_date].blank?
-    @franchise.term_date = Date.strptime(fp[:term_date], I18n.translate('date.formats.default')) unless fp[:term_date].blank?
-  end
+  
 
   def franchise_params
     params.require(:franchise)

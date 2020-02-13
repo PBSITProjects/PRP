@@ -1,0 +1,49 @@
+<div class = "card">
+  <div class = "card-header login_header">
+    Education, Certificates, Degrees
+  </div>
+  
+  <div class = "card-body card-background-padgett">
+
+    <div class = "form-row col-12">
+      <!-- CPA -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :cpa, "CPA",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-7 col-md-7 col-lg-7">
+          <%=f.check_box :cpa,
+          class: 'form-control form-control-sm col', style: "width:15px;vertical-align:middle"%>
+        </div>
+      </div>
+       <!-- MBA -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :mba, "MBA",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-7 col-md-7 col-lg-7">
+          <%=f.check_box :mba,
+          class: 'form-control form-control-sm col', style: "width:15px;vertical-align:middle"%>
+        </div>
+      </div>
+    </div>
+    <div class = "form-row col-12">
+      
+       <!-- ACCOUNTING DEGREE -->
+      <div class = "form-group form-row col-6">
+        <%=f.label :degree, "Accounting Degree",
+        class: "col-md-4 col-sm-4 col-lg-4 
+        col-form-label-sm label-bold" %>
+        <div class = "col-sm-7 col-md-7 col-lg-7">
+          <%=f.check_box :degree,
+          class: 'form-control form-control-sm col', style: "width:15px;vertical-align:middle"%>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+   
+  </div>
+</div>  

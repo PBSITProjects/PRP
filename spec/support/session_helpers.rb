@@ -15,10 +15,17 @@ module Features
       click_button 'Log In'
     end
 
-    def simulate_sign_in(user)
+    def simulate_user_sign_in(user)
       visit new_user_session_path
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
+      click_button 'Log In'
+    end
+
+    def simulate_admin_sign_in(admin)
+      visit new_admin_session_path 
+      fill_in 'Email', with: admin.email
+      fill_in 'Password', with: admin.password
       click_button 'Log In'
     end
   end

@@ -20,6 +20,7 @@ import "jquery-mask-plugin"
 global.$ = jQuery;
 
 require("custom/franchises")
+require("custom/accountants")
 
 require.context('../images',true, /\.(?:png|jpg|gif|ico|svg)$/)
 
@@ -50,6 +51,14 @@ document.addEventListener("turbolinks:load", () => {
     $.get($("#franchise_search").attr("action"), $("#franchise_search").serialize()+"&destination="+gon.destination,  null, "script");
     return false;
   });
+
+
+  $("#accountant_search input").keyup(function() 
+    {
+    $.get($("#accountant_search").attr("action"), $("#accountant_search").serialize(),  null, "script");
+    return false;
+  });
+
 
  
 })

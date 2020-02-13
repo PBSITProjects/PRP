@@ -23,22 +23,24 @@
     <!-- HERE WE WILL PUT THE if user_masquerade? -->
 
     <!-- NAVIGATION BAR -->
-    <nav class="navbar navbar-expand-md fixed-top"  role="navigation" >
-      <div class="container-fluid">
-        <!-- NAVBAR HEADER -->
-        <div class="navbar-header">
-          <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav-collapse" aria-controls= "main-nav-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- NAVBAR BRAND WITH PADGETT LOGO -->
+    <nav class="navbar navbar-expand-md mb-4"  role="navigation" >
+      <div class = "container-fluid">
+      <!-- NAVBAR BRAND WITH PADGETT LOGO -->
           <%=link_to root_path, class: "navbar-brand" do %>
             <%=image_pack_tag("PadgettIcontrans.png", alt:"Padgett", class: "d-inline-block align-middle") %>
             PR+P
             <%end%>
-        </div>      
+
+          <button  class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav-collapse" aria-controls= "main-nav-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class = "fas fa-bars padgett-blue-icon"> </i>
+            
+          </button>
+          
+
         <!-- MENU CONTENT -->
         <%= render "shared/menubar" %>
-      </div>
+     </div> 
     </nav>
   <!-- MAIN CONTAINER-->
   <div class = "container-fluid">  

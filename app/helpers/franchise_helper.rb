@@ -68,14 +68,14 @@ module FranchiseHelper
       when 'add_credit'
         route = new_franchise_credit_path(franchise_id: franchise.id)
       when 'add_accountant'
-        route = new_accountant_path(franchise_id: franchise.id)
+        route = new_admins_accountant_path(franchise_id: franchise.id)
       when 'support'
         route = supports_path(franchise_id: franchise.id)
       end
 
       rtn_html = <<-HTML     
         <td class = "text-nowrap" style="text-align:right">
-          <a href="#{route}" class="btn btn-sm btn-padgett">Continue</a>
+          <a data-turbolinks="false" href="#{route}" class="btn btn-sm btn-padgett">Continue</a>
         </td>
       HTML
     

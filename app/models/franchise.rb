@@ -1,4 +1,4 @@
-class Franchise < ApplicationRecord
+ class Franchise < ApplicationRecord
 # t.string   area
 # t.string   mast
 # t.integer   region
@@ -55,6 +55,7 @@ class Franchise < ApplicationRecord
 
 has_many :users
 has_many :event_logs
+has_many :accountants
 
 NULL_ATTRS = %w(start_date renew_date term_date)
 

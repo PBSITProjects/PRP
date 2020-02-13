@@ -18,7 +18,10 @@
       method: :delete, class: 'btn btn-padgett navbar-btn' %>
     <%end%>
   <% else %>
+    
+  
     <!-- If no one is logged in, show the admin login button -->
-    <%= link_to "Admin", new_admin_session_path, class: 'btn btn-padgett navbar-btn', method: :get %>
+    <%= link_to "Admin", new_admin_session_path, class: 'btn btn-padgett navbar-btn nav-item', method: :get %>
+  
   <%end%>
 </ul>

@@ -4,8 +4,10 @@ class AdminAbility
   def initialize(user)
     if user.full_control? 
       can :manage, Franchise
+      can :manage, Accountant
     else
       can :read, Franchise
+      can :read, Accountant
     end    
     # Define abilities for the passed in user here. For example:
     #

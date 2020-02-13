@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_01_153718) do
+ActiveRecord::Schema.define(version: 2019_12_06_201429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accountants", force: :cascade do |t|
+    t.bigint "franchise_id"
+    t.string "accountant_num", null: false
+    t.string "lastname", null: false
+    t.string "firstname", null: false
+    t.string "initial"
+    t.string "salutation"
+    t.date "birthdate"
+    t.string "spouse_name"
+    t.date "spouse_birthdate"
+    t.integer "spouse_partner"
+    t.date "start_date"
+    t.integer "inactive"
+    t.date "term_date"
+    t.integer "cpa"
+    t.integer "mba"
+    t.integer "degree"
+    t.integer "agent"
+    t.integer "advisory_board"
+    t.text "notes"
+    t.index ["accountant_num", "franchise_id"], name: "index_accountants_on_accountant_num_and_franchise_id", unique: true
+    t.index ["franchise_id"], name: "index_accountants_on_franchise_id"
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -43,22 +67,22 @@ ActiveRecord::Schema.define(version: 2019_11_01_153718) do
   end
 
   create_table "franchises", force: :cascade do |t|
-    t.string "area"
-    t.string "mast"
-    t.integer "region"
-    t.string "franchise_number"
-    t.string "office"
-    t.string "firm_id"
+    t.string "area", null: false
+    t.string "mast", null: false
+    t.integer "region", null: false
+    t.string "franchise_number", null: false
+    t.string "office", null: false
+    t.string "firm_id", null: false
     t.string "salutation"
-    t.string "lastname"
-    t.string "firstname"
+    t.string "lastname", null: false
+    t.string "firstname", null: false
     t.string "initial"
-    t.string "address"
+    t.string "address", null: false
     t.string "address2"
-    t.string "city"
-    t.string "state"
-    t.string "zip_code"
-    t.string "email"
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "zip_code", null: false
+    t.string "email", null: false
     t.string "ship_address"
     t.string "ship_address2"
     t.string "ship_city"
@@ -69,7 +93,7 @@ ActiveRecord::Schema.define(version: 2019_11_01_153718) do
     t.string "home_city"
     t.string "home_state"
     t.string "home_zip_code"
-    t.string "phone"
+    t.string "phone", null: false
     t.string "phone2"
     t.string "fax"
     t.string "mobile"
@@ -95,6 +119,7 @@ ActiveRecord::Schema.define(version: 2019_11_01_153718) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "term_reason"
     t.index ["area", "mast", "region", "franchise_number", "office", "email", "inactive"], name: "office_index", unique: true
+    t.index ["franchise_number", "region", "office"], name: "index_franchises_on_franchise_number_and_region_and_office", unique: true
     t.index ["franchise_number"], name: "franchise_number"
   end
 
@@ -125,4 +150,5 @@ ActiveRecord::Schema.define(version: 2019_11_01_153718) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "accountants", "franchises"
 end
